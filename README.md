@@ -3,10 +3,10 @@
 
 <font size=7>**Requirements**</font><br>
 * <font size=4>Python 3.8.13</font><br>
-* <font size=4>opencv-python == 4.5.1.48</font><br>
-* <font size=4>Numpy == 1.21.1</font><br>
-* <font size=4>Pillow == 9.3.0</font><br>
-* <font size=4>PyQt5 == 5.15.7</font><br>
+* <font size=4>opencv-python==4.5.1.48</font><br>
+* <font size=4>Numpy==1.21.1</font><br>
+* <font size=4>Pillow==9.3.0</font><br>
+* <font size=4>PyQt5==5.15.7</font><br>
 
 <font size=7>**Folder**</font><br>
 ```shell
