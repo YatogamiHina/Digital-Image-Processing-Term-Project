@@ -3,9 +3,6 @@ from PyQt5 import QtCore
 from PyQt5.QtWidgets import QMainWindow, QFileDialog
 # from PyQt5.QtCore import QThread, pyqtSignal
 
-import time
-import os
-
 
 from utils.UI import Ui_MainWindow
 from utils.img_controller import img_controller

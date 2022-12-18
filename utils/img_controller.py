@@ -7,7 +7,7 @@ from utils.processing_utils import processing_utils
 import base64
 from utils.sad_panda import explode
 from io import BytesIO
-from PIL import Image, ImageQt
+# from PIL import Image, ImageQt
 
 class img_controller(object):
     def __init__(self, target_path, ui):
@@ -20,7 +20,7 @@ class img_controller(object):
         self.total = total
         
         if t > 0:
-            img_path = target_path + total[0]
+            img_path = target_path + total[-1]
             self.img_background = processing_utils.read_image(img_path)
             self.img_background = processing_utils.resize(self.img_background)
             self.Sharpen_background = processing_utils.sharpen(self.img_background)

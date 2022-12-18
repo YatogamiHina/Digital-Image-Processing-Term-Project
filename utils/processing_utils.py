@@ -191,7 +191,7 @@ class processing_utils(object):
         img_change = img_list[index]
 
         height , width = img_change.shape[:2]
-        img1 , img2 , imgOut , dst1 = processing_utils.get_good_match(Sharpen_list[index],Sharpen_list[0])
+        img1 , img2 , imgOut , dst1 = processing_utils.get_good_match(Sharpen_list[index],Sharpen_list[-1])
         delta_x1 = np.floor((dst_list[index][0][0][0] + dst_list[index][0][0][1]) / 2)
         delta_y1 = np.floor((dst_list[index][0][0][1] + dst_list[index][3][0][1]) / 2)
         delta_x2 = dst_list[index][2][0][0] - width
