@@ -10,20 +10,20 @@
 
 <font size=6>**Folder**</font><br>
 ```shell
-<font size=4>├── Readme.md                   // help</font><br>
-<font size=4>├── utils</font><br>
-<font size=4>│   ├── controller.py           // UI controller</font><br>
-<font size=4>│   ├── img_controller.py       // display controller</font><br>
-<font size=4>│   ├── img2str.py              // image transformer</font><br>
-<font size=4>│   ├── processing_utils.py     // Algorithm</font><br>
-<font size=4>│   ├── sad_panda.py            // warning image</font><br>
-<font size=4>│   └── UI.py                   // UI</font><br>
-<font size=4>├── data</font><br>
-<font size=4>│   ├── sample_1</font><br>
-<font size=4>│   └── sample_2</font><br>
-<font size=4>├── term_project.py             // main</font><br>
-<font size=4>├── term_project.exe            // executable file</font><br>
-<font size=4>└── requirement.txt             // environment</font><br>
+├── Readme.md                   // help
+├── utils
+│   ├── controller.py           // UI controller
+│   ├── img_controller.py       // display controller
+│   ├── img2str.py              // image transformer
+│   ├── processing_utils.py     // Algorithm
+│   ├── sad_panda.py            // warning image
+│   └── UI.py                   // UI
+├── data
+│   ├── sample_1
+│   └── sample_2
+├── term_project.py             // main
+├── term_project.exe            // executable file
+└── requirement.txt             // environment
 ```
 <font size=6>**How to use**</font><br>
 * <font size=4>Run the file to open the UI.</font><br>
