@@ -21,8 +21,8 @@
 ├── data
 │   ├── sample_1
 │   └── sample_2
-├── main.py             // main
-├── main.exe            // executable file
+├── main.py                     // main
+├── main.exe                    // executable file
 └── requirement.txt             // environment
 ```
 <font size=7>**How to use**</font><br>
