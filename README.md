@@ -21,18 +21,18 @@
 ├── data
 │   ├── sample_1
 │   └── sample_2
-├── term_project.py             // main
-├── term_project.exe            // executable file
+├── main.py             // main
+├── main.exe            // executable file
 └── requirement.txt             // environment
 ```
 <font size=7>**How to use**</font><br>
 * <font size=4>Run the file to open the UI.</font><br>
 ```shell
-run term_project.exe
+run main.exe
 ```
 <font size=4>or</font><br>
 ```shell
-python term_project.py
+python main.py
 ```
 ![](https://i.imgur.com/qQRwHKZ.png)
 
