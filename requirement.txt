@@ -1,9 +1,9 @@
 Python 3.8.13
 
-opencv-python == 4.5.1.48
+opencv-python==4.5.1.48
 
-Numpy == 1.21.1
+Numpy==1.21.1
 
-Pillow == 9.3.0
+Pillow==9.3.0
 
-PyQt5 == 5.15.7
+PyQt5==5.15.7
