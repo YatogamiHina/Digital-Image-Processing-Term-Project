@@ -9,6 +9,7 @@
 * <font size=4>PyQt5 == 5.15.7</font><br>
 
 <font size=6>**Folder**</font><br>
+```shell
 <font size=4>├── Readme.md                   // help</font><br>
 <font size=4>├── utils</font><br>
 <font size=4>│   ├── controller.py           // UI controller</font><br>
@@ -23,7 +24,7 @@
 <font size=4>├── term_project.py             // main</font><br>
 <font size=4>├── term_project.exe            // executable file</font><br>
 <font size=4>└── requirement.txt             // environment</font><br>
-
+```
 <font size=6>**How to use**</font><br>
 * <font size=4>Run the file to open the UI.</font><br>
 ```shell
