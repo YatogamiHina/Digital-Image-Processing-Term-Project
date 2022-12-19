@@ -20,10 +20,10 @@ class img_controller(object):
         self.total = total
         
         if t > 0:
-            img_path = target_path + total[-1]
-            self.img_background = processing_utils.read_image(img_path)
-            self.img_background = processing_utils.resize(self.img_background)
-            self.Sharpen_background = processing_utils.sharpen(self.img_background)
+            img_path = target_path + total[0]
+            self.img_background_temp = processing_utils.read_image(img_path)
+            self.img_background_temp = processing_utils.resize(self.img_background_temp)
+            self.Sharpen_background_temp = processing_utils.sharpen(self.img_background_temp)
             self.target_path = target_path
             self.img_path = img_path
             
@@ -43,6 +43,7 @@ class img_controller(object):
         Sharpen_list = []
         new_img_list = []
         dst_list = []
+        temp = []
         t = len(self.total)
 
         
@@ -56,26 +57,29 @@ class img_controller(object):
                 # height , width , channel = img.shape
                 img_resize = processing_utils.resize(img1)     
                 img_list.append(img_resize)
-                height , width , channel = img_resize.shape
-                # cv2.namedWindow("background")
-                # cv2.imshow('original' , img_resize)           
+                height , width , channel = img_resize.shape        
                     
-                gradient_result = processing_utils.gradient(img_resize)
+                # gradient_result = processing_utils.gradient(img_resize)
                 Sharpen_result = processing_utils.sharpen(img_resize)
                 # cv2.imwrite(target_path + 'sharpen/Sharpen_result_' + str(num_img+1) + '.jpg' , Sharpen_result)
-                Gradient_list.append(gradient_result)
+                # Gradient_list.append(gradient_result)
                 Sharpen_list.append(Sharpen_result)
                 
-                img1 , img2 , imgOut , dst1 = processing_utils.get_good_match(Sharpen_list[num_img] , self.Sharpen_background)
-                new_img_list.append(imgOut)
+                dst1 = processing_utils.get_good_match(Sharpen_list[num_img] , self.Sharpen_background_temp)
                 dst_list.append(dst1)
-
+                dst_list.append(dst1[2][0])
+                temp.append(dst1[2][0][0])
+                
+            img_list , dst_list , img_background , Sharpen_background = processing_utils.img_sort(img_list,temp)
+            new_img_list , Gradient_list = processing_utils.img_registration(img_list,dst_list)
+            
             self.img_list = img_list
             self.Gradient_list = Gradient_list
             self.Sharpen_list = Sharpen_list
             self.new_img_list = new_img_list
             self.dst_list = dst_list
-
+            self.Sharpen_background = Sharpen_background
+            self.img_background = img_background
             self.origin_img = self.img_background
             self.origin_height, self.origin_width, self.origin_channel = self.origin_img.shape
         # except:
@@ -151,16 +155,7 @@ class img_controller(object):
         
     def img_path_processing(self , x , y):
         index , ROI_list = processing_utils.select_img(self.Gradient_list,int(x),int(y))
-        img_change = self.img_list[index]
-        height , width = img_change.shape[:2]
-        img1 , img2 , imgOut , dst1 = processing_utils.get_good_match(self.Sharpen_list[index],self.Sharpen_list[0])
-        delta_x1 = np.floor((self.dst_list[index][0][0][0] + self.dst_list[index][0][0][1]) / 2)
-        delta_y1 = np.floor((self.dst_list[index][0][0][1] + self.dst_list[index][3][0][1]) / 2)
-        delta_x2 = self.dst_list[index][2][0][0] - width
-        delta_y2 = self.dst_list[index][2][0][1] - height
-        position = np.abs([delta_x1 , delta_y1 , delta_x2 , delta_y2]).astype(np.uint8)
-        new_img = processing_utils.position_transform(img_change,index,position)
+        new_img = self.new_img_list[index]
         self.display_img = new_img
         self.index = index
         self.__update_img()
- 
