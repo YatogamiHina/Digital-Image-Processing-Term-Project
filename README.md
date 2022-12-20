@@ -18,9 +18,11 @@
 <font size=4>│   └── UI.py                   // UI</font><br>
 <font size=4>├── data</font><br>
 <font size=4>│   ├── sample_1</font><br>
-<font size=4>│   └── sample_2</font><br>
-<font size=4>├── term_project.py             // main</font><br>
-<font size=4>├── term_project.exe            // executable file</font><br>
+<font size=4>│   ├── sample_2</font><br>
+<font size=4>│   ├── sample_3</font><br>
+<font size=4>│   └── sample_4</font><br>
+<font size=4>├── main.py             // main</font><br>
+<font size=4>├── main.exe            // executable file</font><br>
 <font size=4>└── requirement.txt             // environment</font><br>
 
 <font size=6>**How to use**</font><br>
